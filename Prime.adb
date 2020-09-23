@@ -1,4 +1,4 @@
--- cernr_2^5_2020
+-- cerner_2^5_2020
 -- This Program prints whether the User entered a Prime number or not
 with Ada.Text_IO; use Ada.Text_IO;
 with Ada.Integer_Text_IO; use Ada.Integer_Text_IO;
