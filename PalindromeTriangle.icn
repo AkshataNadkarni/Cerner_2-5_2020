@@ -1,0 +1,27 @@
+# cerner_2^5_2020
+# This program prints palindrome triagle of digits. The size of the triangle is taken as an input
+procedure main()
+ write ("Enter the height of the triangle")
+ s := read(); 
+   if s > 0 then
+   {
+    every i := 0 to s by +1 do
+    {
+    every k := s to i by -1 do 
+    {
+    writes("  ");
+    }
+    every j:= i to 0 by -1 do
+    {
+    writes(" ",j);
+    }
+    every j := 1 to i by +1 do
+    {
+    writes(" ",j);
+    }
+    writes("\n");
+    }
+    }
+   else
+   writes(" Input should be greater than 0"); 
+end
