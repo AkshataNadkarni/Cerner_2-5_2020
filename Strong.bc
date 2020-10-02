@@ -1,0 +1,35 @@
+/* cerner_2^5_2020
+   This program prints whether the user Entered a Strong number or not
+   Strong number is a number which can be defined as an addition of factorial of each digit of the number which is equal to the number itself. 
+   Ex : 145=> 1!+4!+5!=> 1+24+120= 145 so 145 is a strong  number
+*/
+sum =0;
+r=0;
+p=1;
+i=1;
+print "Enter a number \n";
+num = read();
+n = num;
+while(num != 0)
+{
+scale=0;
+p=1;
+i=1;
+r = num % 10;
+for (i=1;i<=r;i++)
+{
+p= p *i;
+}
+scale=0;
+num=num/10;
+sum=sum+p;
+}
+if(sum == n) 
+{
+print "Awesome!! You've entered a Strong number : ",n;
+}
+if(sum!=n)
+{
+print "Ooops!! Entered number ", n," is not a Strong number";
+}
+quit;
