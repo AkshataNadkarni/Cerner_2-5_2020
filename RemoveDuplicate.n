@@ -1,0 +1,32 @@
+/* cerner_2^5_2020
+   This program takes n as the size of an array, n elements as an array elements from the user and Prints the array by removing the duplicate elements
+*/
+class RemoveDuplicate
+{
+    static Main () : void
+    {
+        System.Console.WriteLine ("Enter the number of elements you want store in an array");
+        def n = int.Parse(System.Console.ReadLine());
+        def arr = array(n);    mutable cn = n;
+        System.Console.WriteLine("Enter  Array elements");
+        for (mutable i=0; i<n; i++)   {
+         arr[i]=   int.Parse(System.Console.ReadLine());
+        }
+        System.Console.WriteLine("Entered array is ");
+        for (mutable i=0; i<n; i++)  {
+         System.Console.Write(" " + arr[i]);
+        }
+        System.Console.WriteLine("\nArray after removing duplicate element is ");
+        for (mutable i = 0; i < cn; i++) {
+            for (mutable j = i+1; j < cn; j++) {
+                when (arr[i] == arr[j]) {  
+                    arr[j] = arr[cn-1];
+                    cn--;   j--;
+                }
+            }
+        }
+        for (mutable i=0; i<cn; i++) {
+         System.Console.Write(" " + arr[i]);
+        }
+    }
+}
