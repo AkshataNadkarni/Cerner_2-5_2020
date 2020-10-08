@@ -1,0 +1,19 @@
+/* cerner_2^5_2020
+*  This 'Sidef' program takes the value for N from user to display first N Gapful numbers
+*  Gapful numbers : is a number N of at least 3 digits such that it is divisible by the concatenation of it’s first and last digit.
+*  Ex. 132 => concatination of 1st and 3rd number will form 12 , 132 is completely divisible by 12.
+*  Can run this program at https://tio.run/#sidef 
+*/
+
+func is_gapful(n, base=10) {
+    n.is_div(base*floor(n / base**n.ilog(base)) + n%base)
+}
+
+say "Enter an integer number N to see first N Gapful numbers" 
+var i = read(Number);
+i <=0 ? say "Please enter proper input"     
+: var task = ["The first %s gapful numbers are (>= %s)", i, 1e2, 10,]
+ 
+task.each_slice(4, {|title, n, from, b|say sprintf("\n#{title} for base #{b}:", n, from.commify)
+    say (from..Inf -> lazy.grep{ is_gapful(_,b) }.first(n).join(' '))
+}) 
