@@ -1,0 +1,19 @@
+rem cerner_2^5_2020
+rem This program takes an integer number as an input and then prints whether it's an Armstrong number or not
+rem A positive number is called Armstrong number if it is equal to the sum of cubes of its digits
+rem Ex :153, 1*1*1 + 5*5*5 + 3*3*3 = 153 so 153 is an Armstrong number
+rem can be run at https://www.jdoodle.com/execute-yabasic-online/   
+let b=0
+print "Enter an integer number : "
+input n
+let temp = n
+while (n > 0)
+  let a = mod(n,10)
+  b = b + a**3
+  n = int(n / 10)
+wend
+if (b = temp) then
+print "Awesome!! You've entered an Armstrong number ",temp
+else
+print "Sorry!! Entered number ", temp, " is not an Armstrong number "
+endif
